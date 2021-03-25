@@ -90,8 +90,8 @@ ifneq ($(BUILD_MODULE),y)
   OBJS += $(MAINCOBJ) $(MAINCXXOBJ)
 endif
 
-DEPPATH += --dep-path .
-DEPPATH += --obj-path .
+#DEPPATH += --dep-path .
+#DEPPATH += --obj-path .
 DEPPATH += --obj-suffix $(SUFFIX)$(OBJEXT)
 
 VPATH += :.
