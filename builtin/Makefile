@@ -78,4 +78,7 @@ clean_context::
 distclean:: clean_context clean
 	$(call DELFILE, registry$(DELIM).updated)
 
+DEPPATH += --dep-path .
+DEPPATH += --obj-path .
+VPATH += :.
 include $(APPDIR)/Application.mk
