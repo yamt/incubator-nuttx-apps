@@ -1,0 +1,31 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config TESTING_ESP32_PID
+	tristate "TESTING_ESP32_PID"
+	default n
+	#depends on ESP32_SPIRAM
+    #select XTENSA_HAVE_GENERAL_EXCEPTION_HOOKS
+	---help---
+		Enable pid test
+
+if TESTING_ESP32_PID
+
+config TESTING_ESP32_PID_PROGNAME
+	string "Program name"
+	default "esp32_pid"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config TESTING_ESP32_PID_PRIORITY
+	int "task priority"
+	default 100
+
+config TESTING_ESP32_PID_STACKSIZE
+	int "stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif
